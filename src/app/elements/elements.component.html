@@ -1,0 +1,47 @@
+<div id=container>
+    <div id="periodicTable">
+        <div class="elements" *ngFor="let element of elements | async; index as i" (click)="elementDetails(i)"
+            [ngClass]="{'highlight': selectedIndex === i}">
+            <button class="element" name="{{element.Symbol}}">
+                {{element.Symbol}}
+            </button>
+        </div>
+    </div>
+    <div id="elementDetails">
+        <div id="detailText">
+            <div>{{details1}}</div>
+            <div>{{details2}}</div>
+            <div>{{details3}}</div>
+        </div>
+        <div id="elementSymbol" [style.color]=ElementBgColor>{{symbol}}</div>
+    </div>
+    <div id="Config">
+        <div class="ConfigButtons">
+            <input type="text" id="searchButton" ngDefaultControl [(ngModel)]="searchText"
+                (keyup.enter)="elementInfo(searchText)" placeholder="Search Elements" />
+            <div id="filterButton" (click)="toggleFilter()">{{filterButtonText}}</div>
+        </div>
+        <div id="elementsFilter">
+            <div id="subElementsFilter">
+                <div class="propertybutton" id="solid" (click)='applyFilter("Standard_State","Solid")'>Solid</div>
+                <div class="propertybutton" id="liquid" (click)='applyFilter("Standard_State","Liquid")'>Liquid</div>
+                <div class="propertybutton" id="gas" (click)='applyFilter("Standard_State","Gas")'>Gas</div>
+                <div class="propertybutton" id="metal" (click)='applyFilter("Group_Block","Metal")'>Metal</div>
+                <div class="propertybutton" id="non_metal" (click)='applyFilter("Group_Block","Non Metal")'>Non Metal
+                </div>
+                <div class="propertybutton" id="metalloid" (click)='applyFilter("Group_Block","Metalloid")'>Metalloid
+                </div>
+            </div>
+            <div id="subElementsFilter">
+                <div class="propertybutton" id="noble_gas" (click)='applyFilter("Group_Block","Noble Gas")'>Noble Gas
+                </div>
+                <div class="propertybutton" id="halogen" (click)='applyFilter("Group_Block","Halogen")'>Halogen</div>
+                <div class="propertybutton" id="lanthanoid" (click)='applyFilter("Group_Block","Lanthanoid")'>Lanthanoid
+                </div>
+                <div class="propertybutton" id="actinoid" (click)='applyFilter("Group_Block","Actinoid")'>Actinoid</div>
+                <div class="propertybutton" id="transition_metal"
+                    (click)='applyFilter("Group_Block","Transition Metal")'>Transition Metal</div>
+            </div>
+        </div>
+    </div>
+</div>

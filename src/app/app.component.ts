@@ -13,7 +13,7 @@ export class AppComponent {
   constructor() {
     this.landScape.addEventListener("change", () => {
       if (this.landScape.matches) {
-        alert('Landscape mode not fully supported. Please switch back to Portrait mode.')
+       // alert('Landscape mode not fully supported. Please switch back to Portrait mode.')
       }
     });
   }

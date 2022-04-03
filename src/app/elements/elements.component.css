@@ -171,6 +171,13 @@
   100% { background-position: 0% 100%; }
 }
 
+@media (max-height:500px)  {
+  
+  #elementDetails{
+    display: none;  
+  }
+}
+
 @media (max-width:700px)  {
 
   #periodicTable{

@@ -42,7 +42,7 @@ export class ElementsComponent {
     document.getElementById("elementDetails").classList.add("show");
 
     //Generate dynamic background color when element is selected
-    document.getElementById("container").style.background = this.generateBgColor();
+    //document.getElementById("container").style.background = this.generateBgColor();
 
   }
 

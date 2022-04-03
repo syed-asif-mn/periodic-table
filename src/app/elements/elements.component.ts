@@ -87,15 +87,11 @@ export class ElementsComponent {
 
   //Random gradient generator
   generateBgColor() {
-    var hexValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e"];
-    var gradient = "linear-gradient(" + Math.round(Math.random() * 360) + "deg, " + populate('#') + ", " + populate('#') + ")";
+    var r = Math.round(Math.random() * 255);
+    var g = Math.round(Math.random() * 255);
+    var b = Math.round(Math.random() * 255);
+    var gradient = `linear-gradient(${Math.round(Math.random() * 360)}deg,rgba(${r},${g},${b},0.2),rgba(${g},${r},${b},0.2))`;
     return gradient;
-
-    function populate(a) {
-      for (var i = 0; i < 6; i++)
-        a += hexValues[Math.round(Math.random() * 14)];
-      return a;
-    }
   }
 }
 

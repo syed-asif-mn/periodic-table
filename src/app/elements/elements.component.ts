@@ -90,7 +90,7 @@ export class ElementsComponent {
     var r = Math.round(Math.random() * 100);
     var g = Math.round(Math.random() * 100);
     var b = Math.round(Math.random() * 100);
-    var gradient = `linear-gradient(${Math.round(Math.random() * 360)}deg,rgba(${r},${g},${b}, 0.7),rgba(${g},${r},${b}, 0.7))`;
+    var gradient = `linear-gradient(${Math.round(Math.random() * 360)}deg,rgba(255, 255, 255, 0.7),rgba(${g},${r},${b}, 0.7))`;
     return gradient;
   }
 }
